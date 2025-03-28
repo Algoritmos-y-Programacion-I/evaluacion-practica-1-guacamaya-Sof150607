@@ -164,7 +164,7 @@ public class Guacamaya {
     public static double calcularVentasTotales(){
 
         double ventas = 0;
-        for (int i = 0; i < precios.length; i++) {
+        for (int i = 0; i < referencias; i++) {
             ventas += precios[i] * unidades[i];
         }
         return ventas;
