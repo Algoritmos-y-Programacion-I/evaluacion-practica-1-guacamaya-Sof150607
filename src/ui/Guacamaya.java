@@ -9,6 +9,7 @@ public class Guacamaya {
     // Arreglos de precios y unidades para todo el programa
     public static double[] precios;
     public static int[] unidades;
+    public static int referencias;
 
     public static void main(String[] args) {
 
@@ -24,6 +25,7 @@ public class Guacamaya {
     public static void inicializarGlobales() {
 
         reader = new Scanner(System.in);
+
 
     }
 
@@ -95,39 +97,86 @@ public class Guacamaya {
     public static void establecerCantidadVendida() {
 
         System.out.println("\nDigite el numero de referencias de producto diferentes vendidas en el dia ");
-        int referencias = reader.nextInt();
+        referencias = reader.nextInt();
 
         precios = new double[referencias];
         unidades = new int[referencias];
 
     }
 
+    /**
+     * Descripcion: Este metodo solicitará al usuario el precio de cada referencia y el numero de unidades que hay por cada referencia
+     * param: referencias / número de referencias
+     *
+     */
+
     public static void solicitarDatos(){
 
-        
-     
+        for (int i = 0; i < referencias; i++ ){
+         System.out.println("\nDigite el precio de la referencia "+ (i+1) + ":" );
+         precios[i] = reader.nextDouble();
+
+         System.out.println("\nDigite el numero de unidades vendidas de la referencia "+ (i+1) + ":");
+         unidades[i] = reader.nextInt();
+
+        }
     }
+
+    /**
+     * Descripcion: Este metodo solicitará al usuario el precio de cada referencia y el numero de unidades que hay por cada referencia
+     * param: referencias / número de referencias, arreglo de unidades
+     * return: suma / suma total de todas las unidades vendidas
+     */
 
     public static int calcularTotalUnidadesVendidas(){
 
-        return 0;
+        int suma = 0;
 
+        for (int i = 0; i < referencias ; i++ ){
+            suma += unidades[i];
+        }
+        return suma;
 
     }
+
+    /**
+     * Descripcion:  Este metodo permite calcular el precio promedio de las referencias de producto vendidas durante el día
+     * param: referencias / número de referencias, arreglo de precios y unidades
+     * return: precio promedio
+     */
 
     public static double calcularPrecioPromedio(){
 
-        return 0;
-
+        double suma = 0;
+        for (int i = 0; i < referencias; i++) { 
+        suma += precios[i]*unidades[i]; 
+        }
+        return suma/referencias;
 
     }
+
+    /**
+     * Descripcion: Este metodo permite calcular las ventas totales (dinero recaudado) durante el día.
+     * param: referencias / número de referencias, arreglo de precios y unidades
+     * return: ventas / ventas totales
+     */
 
     public static double calcularVentasTotales(){
 
-        return 0;
+        double ventas = 0;
+        for (int i = 0; i < precios.length; i++) {
+            ventas += precios[i] * unidades[i];
+        }
+        return ventas;
 
 
     }
+
+    /**
+     * Descripcion: 
+     * param: 
+     * return: 
+     */
 
     public static int consultarReferenciasSobreLimite(double limite){
 
