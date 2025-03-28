@@ -70,7 +70,7 @@ public class Guacamaya {
                 case 5:
                     System.out.println("\nDigite el limite minimo de ventas a analizar");
                     double limite = reader.nextDouble();
-                    System.out.println("\nDe las "+precios.length+" referencias vendidas en el dia, "+consultarReferenciasSobreLimite(limite)+" superaron el limite minimo de ventas de "+limite);
+                    System.out.println("\nDe las "+ referencias +" referencias vendidas en el dia, "+consultarReferenciasSobreLimite(limite)+" superaron el limite minimo de ventas de "+limite);
                     break;
                 case 6:
                     System.out.println("\nGracias por usar nuestros servicios!");
@@ -149,9 +149,9 @@ public class Guacamaya {
 
         double suma = 0;
         for (int i = 0; i < referencias; i++) { 
-        suma += precios[i]*unidades[i]; 
+        suma += precios[i]; 
         }
-        return suma/referencias;
+        return suma/(precios.length);
 
     }
 
@@ -173,14 +173,20 @@ public class Guacamaya {
     }
 
     /**
-     * Descripcion: 
-     * param: 
-     * return: 
+     * Descripcion: Este metodo permite consultar el número de referencias de productos que en el día hayan superado un límite mínimo de ventas
+     * param: limite
+     * return: productos que en el día hayan superado un límite mínimo de ventas
      */
 
     public static int consultarReferenciasSobreLimite(double limite){
 
-        return 0;
+        int contador = 0;
+        for (int i = 0; i < referencias; i++) {
+            if ((precios[i] * unidades[i]) > limite) {
+                contador++;
+            }
+        }
+        return contador;
 
     }
 
