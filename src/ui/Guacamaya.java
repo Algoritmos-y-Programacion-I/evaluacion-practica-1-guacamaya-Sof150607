@@ -106,7 +106,7 @@ public class Guacamaya {
 
     /**
      * Descripcion: Este metodo solicitará al usuario el precio de cada referencia y el numero de unidades que hay por cada referencia
-     * param: referencias / número de referencias
+     * param:--
      *
      */
 
@@ -124,7 +124,7 @@ public class Guacamaya {
 
     /**
      * Descripcion: Este metodo solicitará al usuario el precio de cada referencia y el numero de unidades que hay por cada referencia
-     * param: referencias / número de referencias, arreglo de unidades
+     * param: --
      * return: suma / suma total de todas las unidades vendidas
      */
 
@@ -141,7 +141,7 @@ public class Guacamaya {
 
     /**
      * Descripcion:  Este metodo permite calcular el precio promedio de las referencias de producto vendidas durante el día
-     * param: referencias / número de referencias, arreglo de precios y unidades
+     * param: --
      * return: precio promedio
      */
 
@@ -157,7 +157,7 @@ public class Guacamaya {
 
     /**
      * Descripcion: Este metodo permite calcular las ventas totales (dinero recaudado) durante el día.
-     * param: referencias / número de referencias, arreglo de precios y unidades
+     * param: --
      * return: ventas / ventas totales
      */
 
